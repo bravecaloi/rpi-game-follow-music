@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="css/game.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
+
+    <!-- scripts, game_server.js -->
+    <script src="lib/jquery-2.1.4.min.js" charset="utf-8"></script>
+    <script src="game_server.js" charset="utf-8"></script>
+
+    <!-- start game server -->
+    <script type="text/javascript">
+  		global.window = window;
+  		global.$ = $;
+  		global.gui = require('nw.gui');
+
+      game.startServer();
+  	</script>
+  </head>
+
+  <body>
+
+    <div id="dots_container"></div>
+
+    <div class="logo_container">
+      <img id="keyPressed_8" src="img/logo_1.png" alt="" />
+      <img id="keyPressed_9" src="img/logo_2.png" alt="" />
+      <img id="keyPressed_10" src="img/logo_3.png" alt="" />
+      <img id="keyPressed_11" src="img/logo_4.png" alt="" />
+    </div>
+
+    <script src="js/game_display.js" charset="utf-8"></script>
+  </body>
+</html>
