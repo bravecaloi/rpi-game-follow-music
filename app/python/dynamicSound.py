@@ -52,7 +52,7 @@ pygame.init()
 AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
 AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH  + '/wav'
 AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH  + '/piano'
-AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/piano2'
+AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/cello'
 AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH  + '/wav'
 
 
