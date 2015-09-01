@@ -50,10 +50,10 @@ pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 
 AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
-AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH   '/wav'
-AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH   '/piano'
-AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH   '/piano2'
-AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH   '/wav'
+AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH  + '/wav'
+AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH  + '/piano'
+AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/piano2'
+AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH  + '/wav'
 
 
 
@@ -65,14 +65,14 @@ AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH   '/wav'
 # tons more sounds are available in / and
 # /usr/share/scratch/Media/Sounds/
 SOUND_MAPPING_0 = {
-  0:  AUDIO_MUSIC_TYPE_0  + '/DO.wav',
-  1:  AUDIO_MUSIC_TYPE_0  + '/RE.wav',
-  2:  AUDIO_MUSIC_TYPE_0  + '/MI.wav',
-  3:  AUDIO_MUSIC_TYPE_0  + '/FA.wav',
-  4:  AUDIO_MUSIC_TYPE_0  + '/SOL.wav',
-  5:  AUDIO_MUSIC_TYPE_0  + '/LA.wav',
-  6:  AUDIO_MUSIC_TYPE_0  + '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_0  + '/DO.wav',
+  0:  AUDIO_MUSIC_TYPE_0 + '/DO.wav',
+  1:  AUDIO_MUSIC_TYPE_0 + '/RE.wav',
+  2:  AUDIO_MUSIC_TYPE_0 + '/MI.wav',
+  3:  AUDIO_MUSIC_TYPE_0 + '/FA.wav',
+  4:  AUDIO_MUSIC_TYPE_0 + '/SOL.wav',
+  5:  AUDIO_MUSIC_TYPE_0 + '/LA.wav',
+  6:  AUDIO_MUSIC_TYPE_0 + '/SI.wav',
+  7:  AUDIO_MUSIC_TYPE_0 + '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
