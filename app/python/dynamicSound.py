@@ -50,10 +50,10 @@ pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 
 AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
-AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH + '/wav'
-AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH + '/piano'
-AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH + '/piano2'
-AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH + '/wav'
+AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH   '/wav'
+AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH   '/piano'
+AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH   '/piano2'
+AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH   '/wav'
 
 
 
@@ -65,14 +65,14 @@ AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH + '/wav'
 # tons more sounds are available in / and
 # /usr/share/scratch/Media/Sounds/
 SOUND_MAPPING_0 = {
-  0:  AUDIO_MUSIC_TYPE_0 + '/DO.wav',
-  1:  AUDIO_MUSIC_TYPE_0 + '/RE.wav',
-  2:  AUDIO_MUSIC_TYPE_0 + '/MI.wav',
-  3:  AUDIO_MUSIC_TYPE_0 + '/FA.wav',
-  4:  AUDIO_MUSIC_TYPE_0 + '/SOL.wav',
-  5:  AUDIO_MUSIC_TYPE_0 + '/LA.wav',
-  6:  AUDIO_MUSIC_TYPE_0 + '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_0 + '/DO.wav',
+  0:  AUDIO_MUSIC_TYPE_0   '/DO.wav',
+  1:  AUDIO_MUSIC_TYPE_0   '/RE.wav',
+  2:  AUDIO_MUSIC_TYPE_0   '/MI.wav',
+  3:  AUDIO_MUSIC_TYPE_0   '/FA.wav',
+  4:  AUDIO_MUSIC_TYPE_0   '/SOL.wav',
+  5:  AUDIO_MUSIC_TYPE_0   '/LA.wav',
+  6:  AUDIO_MUSIC_TYPE_0   '/SI.wav',
+  7:  AUDIO_MUSIC_TYPE_0   '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -87,14 +87,14 @@ for key,soundfile in SOUND_MAPPING_0.iteritems():
 
 
 SOUND_MAPPING_1 = {
-  0:  AUDIO_MUSIC_TYPE_1 + '/DO.wav',
-  1:  AUDIO_MUSIC_TYPE_1 + '/RE.wav',
-  2:  AUDIO_MUSIC_TYPE_1 + '/MI.wav',
-  3:  AUDIO_MUSIC_TYPE_1 + '/FA.wav',
-  4:  AUDIO_MUSIC_TYPE_1 + '/SOL.wav',
-  5:  AUDIO_MUSIC_TYPE_1 + '/LA.wav',
-  6:  AUDIO_MUSIC_TYPE_1 + '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_1 + '/DO.wav',
+  0:  AUDIO_MUSIC_TYPE_1   '/DO.wav',
+  1:  AUDIO_MUSIC_TYPE_1   '/RE.wav',
+  2:  AUDIO_MUSIC_TYPE_1   '/MI.wav',
+  3:  AUDIO_MUSIC_TYPE_1   '/FA.wav',
+  4:  AUDIO_MUSIC_TYPE_1   '/SOL.wav',
+  5:  AUDIO_MUSIC_TYPE_1   '/LA.wav',
+  6:  AUDIO_MUSIC_TYPE_1   '/SI.wav',
+  7:  AUDIO_MUSIC_TYPE_1   '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -108,14 +108,14 @@ for key,soundfile in SOUND_MAPPING_1.iteritems():
 
 
 SOUND_MAPPING_2 = {
-  0:  AUDIO_MUSIC_TYPE_2 + '/DO.wav',
-  1:  AUDIO_MUSIC_TYPE_2 + '/RE.wav',
-  2:  AUDIO_MUSIC_TYPE_2 + '/MI.wav',
-  3:  AUDIO_MUSIC_TYPE_2 + '/FA.wav',
-  4:  AUDIO_MUSIC_TYPE_2 + '/SOL.wav',
-  5:  AUDIO_MUSIC_TYPE_2 + '/LA.wav',
-  6:  AUDIO_MUSIC_TYPE_2 + '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_2 + '/DO.wav',
+  0:  AUDIO_MUSIC_TYPE_2   '/DO.wav',
+  1:  AUDIO_MUSIC_TYPE_2   '/RE.wav',
+  2:  AUDIO_MUSIC_TYPE_2   '/MI.wav',
+  3:  AUDIO_MUSIC_TYPE_2   '/FA.wav',
+  4:  AUDIO_MUSIC_TYPE_2   '/SOL.wav',
+  5:  AUDIO_MUSIC_TYPE_2   '/LA.wav',
+  6:  AUDIO_MUSIC_TYPE_2   '/SI.wav',
+  7:  AUDIO_MUSIC_TYPE_2   '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -129,14 +129,14 @@ for key,soundfile in SOUND_MAPPING_2.iteritems():
 
 
 SOUND_MAPPING_3 = {
-  0:  AUDIO_MUSIC_TYPE_3 + '/DO.wav',
-  1:  AUDIO_MUSIC_TYPE_3 + '/RE.wav',
-  2:  AUDIO_MUSIC_TYPE_3 + '/MI.wav',
-  3:  AUDIO_MUSIC_TYPE_3 + '/FA.wav',
-  4:  AUDIO_MUSIC_TYPE_3 + '/SOL.wav',
-  5:  AUDIO_MUSIC_TYPE_3 + '/LA.wav',
-  6:  AUDIO_MUSIC_TYPE_3 + '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_3 + '/DO.wav',
+  0:  AUDIO_MUSIC_TYPE_3   '/DO.wav',
+  1:  AUDIO_MUSIC_TYPE_3   '/RE.wav',
+  2:  AUDIO_MUSIC_TYPE_3   '/MI.wav',
+  3:  AUDIO_MUSIC_TYPE_3   '/FA.wav',
+  4:  AUDIO_MUSIC_TYPE_3   '/SOL.wav',
+  5:  AUDIO_MUSIC_TYPE_3   '/LA.wav',
+  6:  AUDIO_MUSIC_TYPE_3   '/SI.wav',
+  7:  AUDIO_MUSIC_TYPE_3   '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -158,6 +158,7 @@ last_touched = cap.touched()
 
 # serverIP = "192.168.0.101:2323"
 serverIP = "localhost:2323"
+soundtype = 3
 
 while True:
     current_touched = cap.touched()
@@ -168,18 +169,28 @@ while True:
         pin_bit = 1 << i
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
-            if os.environ.get('GAME_AUDIO_ENV') == 'SOUND_MAPPING_0':
+            from random import randint
+            print soundtype
+	    if soundtype == 0 :
                 sounds_0[i].play()
-            elif os.environ.get('GAME_AUDIO_ENV') == 'SOUND_MAPPING_1':
+ 	    elif soundtype == 1 :
                 sounds_1[i].play()
-            elif os.environ.get('GAME_AUDIO_ENV') == 'SOUND_MAPPING_2':
+ 	    elif soundtype == 2 :
                 sounds_2[i].play()
             else:
-               sounds_3[i].play()
-            urllib2.urlopen('http://' + serverIP + '/touched/' + format(i))
+                sounds_3[i].play()
+            urllib2.urlopen('http://'   serverIP   '/touched/'   format(i))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
              print '{0} released!'.format(i)
+	     if i == 8 :
+		soundtype = 0
+	     if i == 9 :
+		soundtype = 1
+	     if i == 10 :
+		soundtype = 2
+	     if i == 11 :
+		soundtype = 3
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
     time.sleep(0.1)
