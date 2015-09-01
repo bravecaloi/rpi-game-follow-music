@@ -2,12 +2,32 @@
 /***************** SONGS ************************/
 
 
-global.songs = {
-  'feliz_cumple0': 'DO DO RE DO FA MI DO DO RE DO FA MI',
-  'feliz_cumple1': 'RE DO FA MI DO DO RE DO FA MI',
-  'feliz_cumple2': 'FA MI DO DO RE DO FA MI',
-  'feliz_cumple3': 'MI DO DO RE DO FA MI'
-};
+global.songs = [
+  {
+    'name': 'Feliz Cumpleaños',
+    'notes': 'DO DO RE DO FA MI DO DO RE DO FA MI'
+  },
+  {
+    'name': 'Himno de la Alegría',
+    'notes': 'RE DO FA MI DO DO RE DO FA MI DO DO DO DO'
+  },
+  {
+    'name': 'Enter Sandman',
+    'notes': 'FA MI DO DO RE DO FA MI DO DO RE DO DO DO RE DO FA '
+  },
+  {
+    'name': 'Spagheti del rock',
+    'notes': 'MI DO DO RE DO FA MI DO DO RE DO FA DO DO RE DO FA DO DO RE DO FA DO DO RE DO FA'
+  },
+  {
+    'name': 'Chopin 1',
+    'notes': 'DO DO RE DO FA MI DO DO RE'
+  },
+  {
+    'name': 'Autoum Leaves',
+    'notes': 'DO DO RE DO FA DO DO RE DO FA DO DO RE DO FA MI DO DO RE DO FA MI'
+  },
+]
 
 
 /************************************************/
@@ -30,14 +50,18 @@ global.fruits = {
 };
 
 $(document).ready(function(){
-  global.changeSong('feliz_cumple0');
+  global.changeSong(0);
 });
 
 
-global.changeSong = function(song){
+global.changeSong = function(index){
   $('#fruits_container').html('');
 
-  global.notes = global.songs[song].split(' ');
+  var song = global.songs[index];
+  global.selectedSong = index;
+  $('#song_' + global.selectedSong).addClass('selected');
+
+  global.notes = song.notes.split(' ');
   for (var i = 0; i < global.notes.length; i++) {
     var note = global.notes[i];
     global.addFruit(global.fruits[note], i);
@@ -62,3 +86,17 @@ global.addFruit = function(fruit, id){
 
   $('#fruits_container').append(img);
 }
+
+
+
+
+
+
+
+
+
+angular.module('GameApp', [])
+  .controller('GameDisplayController', function() {
+    var gameApp = this;
+    gameApp.songs = global.songs;
+  });

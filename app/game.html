@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="GameApp">
   <head>
 
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="css/game.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/game.css" media="screen" />
 
-    <!-- scripts, game_server.js -->
+
+    <!-- libs  -->
     <script src="lib/jquery-2.1.4.min.js" charset="utf-8"></script>
+    <script src="lib/bootstrap.min.js" charset="utf-8"></script>
+    <script src="lib/angular.min.js" charset="utf-8"></script>
+
+    <!-- scripts  -->
     <script src="game_server.js" charset="utf-8"></script>
 
     <!-- start game server -->
@@ -20,18 +26,30 @@
   	</script>
   </head>
 
-  <body>
-    <div>
+  <body ng-controller="GameDisplayController as gameDisplay">
 
-    </div>
+    <div class="">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="main_title">Bariloche a la Carta</div>
+        </div>
+      </div>
 
-    <div id="fruits_container"></div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div id="fruits_container"></div>
+        </div>
 
-    <div class="logo_container">
-      <img id="keyPressed_8" src="img/logo_1.png" alt="" />
-      <img id="keyPressed_9" src="img/logo_2.png" alt="" />
-      <img id="keyPressed_10" src="img/logo_3.png" alt="" />
-      <img id="keyPressed_11" src="img/logo_4.png" alt="" />
+        <div class="col-xs-4">
+          <div id="songs_selector">
+            <div class="song-item" id="song_{{$index}}" ng-repeat="song in gameDisplay.songs">
+              {{song.name}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <script src="js/game_display.js" charset="utf-8"></script>

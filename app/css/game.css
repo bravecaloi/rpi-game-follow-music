@@ -1,8 +1,41 @@
+
 body{
   background-color: #000;
   color: #fff;
-  margin: 0;
-  /*overflow: hidden;*/
+}
+
+#main_title{
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  background-color: rgb(136, 62, 153);
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#fruits_container{
+  background-color: #000;
+  color: #fff;
+}
+
+#songs_selector{
+  background: rgb(74, 162, 88);
+  color: #fff;
+}
+
+.song-item.selected{
+  background-color: rgb(236, 68, 85);
+}
+
+.row > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
+.song-item{
+  padding: 10px 20px;
 }
 
 .music-fruit{
@@ -17,21 +50,4 @@ body{
 .current-music-fruit{
   opacity: 1;
   border-bottom: 2px solid #fff;
-}
-
-.logo_container{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 20px;
-}
-
-.logo_container > img{
-  opacity: 0.2;
-  width: 40px;
-  margin: 20px;
-}
-
-.logo_container > img.selected{
-  opacity: 1;
 }
