@@ -179,7 +179,7 @@ while True:
                 sounds_2[i].play()
             else:
                 sounds_3[i].play()
-            urllib2.urlopen('http://'   serverIP   '/touched/'   format(i))
+            urllib2.urlopen('http://'  + serverIP  + '/touched/' +  format(i))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
              print '{0} released!'.format(i)
