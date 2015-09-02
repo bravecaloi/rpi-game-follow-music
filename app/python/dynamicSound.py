@@ -1,12 +1,32 @@
 # Copyright (c) 2015 Animus Argentina
-# Author: Animus
-
+# Author: Tony DiCola - Ivan Roth
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 import sys
 import time
 import pygame
 import urllib2
 import os
 import Adafruit_MPR121.MPR121 as MPR121
+
+# Thanks to Scott Garner & BeetBox!
+# https://github.com/scottgarner/BeetBox/
 
 print 'Adafruit MPR121 Capacitive Touch Audio Player Test'
 
@@ -29,11 +49,11 @@ if not cap.begin():
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 
-AUDIO_MUSIC_PATH = '/home/pi/rpi-game-follow-music/app/audio'
+AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
 AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH  + '/wav'
-AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH  + '/banjo'
-AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/cello'
-AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH  + '/piano'
+AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH  + '/piano'
+AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/piano2'
+AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH  + '/wav'
 
 
 
@@ -52,9 +72,9 @@ SOUND_MAPPING_0 = {
   4:  AUDIO_MUSIC_TYPE_0 + '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_0 + '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_0 + '/SI.wav',
-  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
+  7:  AUDIO_MUSIC_TYPE_0 + '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
-  9: '/opt/sonic-pi/etc/samples/perc_bell.wav',
+  9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
   11: '/opt/sonic-pi/etc/samples/perc_bell.wav',
 }
@@ -74,12 +94,11 @@ SOUND_MAPPING_1 = {
   4:  AUDIO_MUSIC_TYPE_1 +  '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_1 +  '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_1 +  '/SI.wav',
-  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
+  7:  AUDIO_MUSIC_TYPE_1 +  '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
-  9: '/opt/sonic-pi/etc/samples/perc_bell.wav',
+  9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
   11: '/opt/sonic-pi/etc/samples/perc_bell.wav',
-
 }
 sounds_1 = [0,0,0,0,0,0,0,0,0,0,0,0]
 
@@ -96,7 +115,7 @@ SOUND_MAPPING_2 = {
   4:  AUDIO_MUSIC_TYPE_2 +  '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_2 +  '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_2 +  '/SI.wav',
-  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
+  7:  AUDIO_MUSIC_TYPE_2 +  '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -117,7 +136,7 @@ SOUND_MAPPING_3 = {
   4:  AUDIO_MUSIC_TYPE_3 +  '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_3 +  '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_3 +  '/SI.wav',
-  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
+  7:  AUDIO_MUSIC_TYPE_3 +  '/DO.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -128,6 +147,9 @@ sounds_3 = [0,0,0,0,0,0,0,0,0,0,0,0]
 for key,soundfile in SOUND_MAPPING_3.iteritems():
         sounds_3[key] =  pygame.mixer.Sound(soundfile)
         sounds_3[key].set_volume(1);
+
+
+
 
 
 # Main loop to print a message every time a pin is touched.
@@ -151,28 +173,24 @@ while True:
             print soundtype
 	    if soundtype == 0 :
                 sounds_0[i].play()
-	    elif soundtype == 1 :
+ 	    elif soundtype == 1 :
                 sounds_1[i].play()
-	    elif soundtype == 2 :
+ 	    elif soundtype == 2 :
                 sounds_2[i].play()
-            else :
+            else:
                 sounds_3[i].play()
-        urllib2.urlopen('http://'  + serverIP  + '/touched/' +  format(i))
+            urllib2.urlopen('http://'  + serverIP  + '/touched/' +  format(i))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
-            print '{0} released!'.format(i)
-	        if i == 7 :
-		        soundtype = 0
-                print 'cambiando a sonido 0'
-            if i == 8 :
-                soundtype = 1
-                print 'cambiando a sonido 1'
-            if i == 9 :
-                soundtype = 2
-                print 'cambiando a sonido 2'
-            if i == 10 :
-                soundtype = 3
-                print 'cambiando a sonido 3'
+             print '{0} released!'.format(i)
+	     if i == 8 :
+		soundtype = 0
+	     if i == 9 :
+		soundtype = 1
+	     if i == 10 :
+		soundtype = 2
+	     if i == 11 :
+		soundtype = 3
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
     time.sleep(0.1)
