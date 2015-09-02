@@ -151,9 +151,9 @@ while True:
             print soundtype
 	    if soundtype == 0 :
             sounds_0[i].play()
- 	    elif soundtype == 1 :
+	    elif soundtype == 1 :
             sounds_1[i].play()
- 	    elif soundtype == 2 :
+	    elif soundtype == 2 :
             sounds_2[i].play()
         else :
             sounds_3[i].play()
