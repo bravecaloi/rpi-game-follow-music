@@ -150,13 +150,13 @@ while True:
             from random import randint
             print soundtype
 	    if soundtype == 0 :
-            sounds_0[i].play()
+                sounds_0[i].play()
 	    elif soundtype == 1 :
-            sounds_1[i].play()
+                sounds_1[i].play()
 	    elif soundtype == 2 :
-            sounds_2[i].play()
-        else :
-            sounds_3[i].play()
+                sounds_2[i].play()
+            else :
+                sounds_3[i].play()
         urllib2.urlopen('http://'  + serverIP  + '/touched/' +  format(i))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
