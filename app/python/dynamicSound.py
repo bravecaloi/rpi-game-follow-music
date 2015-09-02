@@ -72,7 +72,7 @@ SOUND_MAPPING_0 = {
   4:  AUDIO_MUSIC_TYPE_0 + '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_0 + '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_0 + '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_0 + '/DO.wav',
+  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -94,7 +94,7 @@ SOUND_MAPPING_1 = {
   4:  AUDIO_MUSIC_TYPE_1 +  '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_1 +  '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_1 +  '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_1 +  '/DO.wav',
+  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -115,7 +115,7 @@ SOUND_MAPPING_2 = {
   4:  AUDIO_MUSIC_TYPE_2 +  '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_2 +  '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_2 +  '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_2 +  '/DO.wav',
+  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -136,7 +136,7 @@ SOUND_MAPPING_3 = {
   4:  AUDIO_MUSIC_TYPE_3 +  '/SOL.wav',
   5:  AUDIO_MUSIC_TYPE_3 +  '/LA.wav',
   6:  AUDIO_MUSIC_TYPE_3 +  '/SI.wav',
-  7:  AUDIO_MUSIC_TYPE_3 +  '/DO.wav',
+  7:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   8:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   9:  '/opt/sonic-pi/etc/samples/perc_bell.wav',
   10: '/opt/sonic-pi/etc/samples/perc_bell.wav',
@@ -183,13 +183,13 @@ while True:
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
              print '{0} released!'.format(i)
-	     if i == 8 :
+	     if i == 7 :
 		soundtype = 0
-	     if i == 9 :
+	     if i == 8 :
 		soundtype = 1
-	     if i == 10 :
+	     if i == 9 :
 		soundtype = 2
-	     if i == 11 :
+	     if i == 10 :
 		soundtype = 3
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
