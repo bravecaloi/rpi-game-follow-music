@@ -11,25 +11,12 @@ exports.touched = function(req, res) {
 
   if(key < 8){
     musicNotePressed(key);
-
   }else if(key == 11){
-    $('#song_' + global.selectedSong).removeClass('selected');
-    global.selectedSong = (++global.selectedSong == global.songs.length) ? 0 : global.selectedSong;
-    global.changeSong(global.selectedSong);
+    // scroll song
+    console.log('scroll song');
   }
 };
 
-
 function musicNotePressed(key){
-  var tonePressed = global.tones[key];
-  var correctTone = global.notes[global.currentNote];
-
-  // TODO animations on pass and fail
-  if(tonePressed == correctTone){
-    global.currentNote++;
-  }else{
-    global.currentNote = 0;
-  }
-
-  global.selectFruitNote(global.currentNote);
+  global.goNextHack();
 }

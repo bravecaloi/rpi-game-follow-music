@@ -1,3 +1,4 @@
+var global = {};
 
 /***************** SONGS ************************/
 
@@ -86,17 +87,3 @@ global.addFruit = function(fruit, id){
 
   $('#fruits_container').append(img);
 }
-
-
-
-
-
-
-
-
-
-angular.module('GameApp', [])
-  .controller('GameDisplayController', function() {
-    var gameApp = this;
-    gameApp.songs = global.songs;
-  });
