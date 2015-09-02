@@ -1,32 +1,12 @@
 # Copyright (c) 2015 Animus Argentina
-# Author: Tony DiCola - Ivan Roth
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# Author: Animus
+
 import sys
 import time
 import pygame
 import urllib2
 import os
 import Adafruit_MPR121.MPR121 as MPR121
-
-# Thanks to Scott Garner & BeetBox!
-# https://github.com/scottgarner/BeetBox/
 
 print 'Adafruit MPR121 Capacitive Touch Audio Player Test'
 
@@ -150,9 +130,6 @@ for key,soundfile in SOUND_MAPPING_3.iteritems():
         sounds_3[key].set_volume(1);
 
 
-
-
-
 # Main loop to print a message every time a pin is touched.
 print 'Press Ctrl-C to quit.'
 last_touched = cap.touched()
@@ -173,29 +150,29 @@ while True:
             from random import randint
             print soundtype
 	    if soundtype == 0 :
-                sounds_0[i].play()
+            sounds_0[i].play()
  	    elif soundtype == 1 :
-                sounds_1[i].play()
+            sounds_1[i].play()
  	    elif soundtype == 2 :
-                sounds_2[i].play()
-            else:
-                sounds_3[i].play()
-            urllib2.urlopen('http://'  + serverIP  + '/touched/' +  format(i))
+            sounds_2[i].play()
+        else :
+            sounds_3[i].play()
+        urllib2.urlopen('http://'  + serverIP  + '/touched/' +  format(i))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
-             print '{0} released!'.format(i)
-	     if i == 7 :
-		soundtype = 0
-		print 'cambiando a sonido 0'
-	     if i == 8 :
-		soundtype = 1
-		print 'cambiando a sonido 1'
-	     if i == 9 :
-		soundtype = 2
-		print 'cambiando a sonido 2'
-	     if i == 10 :
-		soundtype = 3
-		print 'cambiando a sonido 3'
+            print '{0} released!'.format(i)
+	        if i == 7 :
+		        soundtype = 0
+                print 'cambiando a sonido 0'
+            if i == 8 :
+                soundtype = 1
+                print 'cambiando a sonido 1'
+            if i == 9 :
+                soundtype = 2
+                print 'cambiando a sonido 2'
+            if i == 10 :
+                soundtype = 3
+                print 'cambiando a sonido 3'
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
     time.sleep(0.1)
