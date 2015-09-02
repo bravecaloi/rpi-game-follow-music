@@ -49,11 +49,11 @@ if not cap.begin():
 pygame.mixer.pre_init(44100, -16, 2, 512)
 pygame.init()
 
-AUDIO_MUSIC_PATH = '/home/pi/rpi-game-1/app/audio'
+AUDIO_MUSIC_PATH = '/home/pi/rpi-game-follow-music/app/audio'
 AUDIO_MUSIC_TYPE_0 = AUDIO_MUSIC_PATH  + '/wav'
-AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH  + '/piano'
-AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/piano2'
-AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH  + '/wav'
+AUDIO_MUSIC_TYPE_1 = AUDIO_MUSIC_PATH  + '/banjo'
+AUDIO_MUSIC_TYPE_2 = AUDIO_MUSIC_PATH  + '/cello'
+AUDIO_MUSIC_TYPE_3 = AUDIO_MUSIC_PATH  + '/piano'
 
 
 
