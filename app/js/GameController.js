@@ -55,8 +55,8 @@
     $scope.notes = [];
 
     $scope.slickConfig = {
-        // centerMode: true,
-        slidesToShow: 4,
+        centerMode: true,
+        slidesToShow: 3,
         // centerPadding: '60px',
         arrows: false,
         method: {},
