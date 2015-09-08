@@ -26,3 +26,7 @@ Game 1
 - sudo python setup.py install
 
 - sudo python rpi-adafruit-listener.py
+
+
+#LESS
+- lessc --clean-css app/less/template.less app/css/styles.min.css
