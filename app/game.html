@@ -7,20 +7,10 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/game.css" media="screen" />
 
-    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css"/>
-
-
     <!-- libs  -->
-    <script src="lib/jquery-2.1.4.min.js" charset="utf-8"></script>
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
-
-    <script src="lib/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/SongsData.js" charset="utf-8"></script>
     <script src="lib/angular.min.js" charset="utf-8"></script>
-    <script src="lib/slick/slick.min.js"></script>
-    <script src="lib/slick-angular.min.js" charset="utf-8"></script>
-
+    <!-- <script src="lib/angular-animate.min.js" charset="utf-8"></script> -->
 
     <!-- scripts  -->
     <script src="game_server.js" charset="utf-8"></script>
@@ -29,7 +19,6 @@
     <!-- start game server -->
     <script type="text/javascript">
   		global.window = window;
-  		global.$ = $;
   		global.gui = require('nw.gui');
 
       game.startServer();
@@ -38,19 +27,16 @@
 
   <body ng-controller="GameDisplayController as gameDisplay">
 
-    <div id="main_title">Bariloche a la Carta</div>
-
     <div id="seleced_song_name">{{selectedSong.name}}</div>
 
-    <div class="fruits-container">
-      <slick settings="slickConfig" data="notes">
-        <div ng-repeat="note in notes track by $index">
-          <img id="fruit{{$index}}" ng-src="{{getFruit(note)}}" class="fruit {{ $index == 0 ? 'current-fruit' : ''}}" alt="" />
-        </div>
-      </slick>
-    </div>
+    <div id="threashold"></div>
+    <div id="fruits-container"></div>
 
-    <button ng-click="goNext()">slickNext()</button>
+    <h1 id="feedbackText" class="text-center animated"></h1>
+
+    <button class="btn btn-info" ng-click="startSong()">START SONG</button>
+
+    <button ng-repeat="note in testingNotes track by $index" class="btn btn-warning" ng-click="checkPositions($index)">{{note}}</button>
 
   </body>
 </html>

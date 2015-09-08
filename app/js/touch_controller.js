@@ -10,13 +10,16 @@ exports.touched = function(req, res) {
   var key = req.params.number;
 
   if(key < 8){
-    musicNotePressed(key);
+    fruitNotePressed(key);
+
   }else if(key == 11){
+
     // scroll song
     console.log('scroll song');
   }
 };
 
-function musicNotePressed(key){
-  global.goNextHack();
+
+function fruitNotePressed(key){
+  console.log('fruit pressed: ' + key);
 }

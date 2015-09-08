@@ -8,7 +8,7 @@
   "description": "piano game",
   "main": "app/game.html",
   "window": {
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
     "kiosk": true
   },
