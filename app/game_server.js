@@ -8,7 +8,7 @@ var game = {
     var http        = require('http')
       , path        = require('path')
       , express     = require('express')
-      , touchCtrl   = require(path.join(process.cwd(), 'app/js', 'touch_controller.js'))
+      , touchCtrl   = require(path.join(process.cwd(), 'app/js', 'TouchController.js'))
       , app         = express()
     ;
 

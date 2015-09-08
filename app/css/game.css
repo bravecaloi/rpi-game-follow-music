@@ -6,11 +6,18 @@ body{
 
 #threashold{
   position: absolute;
-  left: 100px;
-  width: 300px;
+  left: 50px;
+  width: 500px;
   height: 300px;
-  border: 50px solid #eee;
   margin-top: 200px;
+  background-color: yellow;
+}
+
+#threasholdLine{
+  width: 5px;
+  height: 100%;
+  background: orange;
+  margin-left: 30%;
 }
 
 #fruits-container{

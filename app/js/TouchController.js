@@ -5,21 +5,14 @@ KEY_MUSIC_SELECTOR  = [11];
 
 
 exports.touched = function(req, res) {
-  res.send('OK');
-
   var key = req.params.number;
 
-  if(key < 8){
-    fruitNotePressed(key);
+  if(key < 7){
+    global.checkPositionsCtrl(key);
 
   }else if(key == 11){
-
-    // scroll song
     console.log('scroll song');
   }
+
+  res.send('OK');
 };
-
-
-function fruitNotePressed(key){
-  console.log('fruit pressed: ' + key);
-}

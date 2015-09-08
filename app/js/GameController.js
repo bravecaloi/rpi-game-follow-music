@@ -12,10 +12,6 @@
     // TESTING !!
     $scope.testingNotes = ['DO','RE','MI','FA','SOL','LA','SI'];
 
-    var aux = document.getElementById('threashold').getBoundingClientRect();
-    ctrl.leftLimit = Math.round(aux.left);
-    ctrl.rightLimit = Math.round(aux.right);
-
     $scope.startSong = function(){
       for (var i = 0; i < ctrl.fruits.length; i++) {
         var fruit = ctrl.fruits[i];
@@ -56,11 +52,9 @@
         var left = Math.round(rect.left);
         var right = Math.round(rect.right);
 
-        if(
-            fruit.tone == TONES[input] &&
+        if( fruit.tone == TONES[input] &&
             fruit.hit == false &&
-            left > ctrl.leftLimit &&
-            right < ctrl.rightLimit
+            collide(fruit)
           ){
           setFeedback('Hit: ' + TONES[input] + ' -> ' + fruit.tone);
           fruit.hit = true;
@@ -68,8 +62,23 @@
           return;
         }
       }
-      setFeedback('Failed: ' + TONES[input] + ' -> ' + fruit.tone);
+      setFeedback('Failed: ' + TONES[input]);
     }
+
+    var thres = document.getElementById('threashold').getBoundingClientRect();
+    function collide(fruit) {
+      var fruitPos = fruit.elem.getBoundingClientRect();
+
+      // If some is false, then there is no overlapping
+      return !(
+        thres.top > fruitPos.bottom ||
+        thres.right < fruitPos.left ||
+        thres.bottom < fruitPos.top ||
+        thres.left > fruitPos.right
+      );
+    }
+
+    global.checkPositionsCtrl = $scope.checkPositions;
 
     function animateFruit(fruit){
       fruit.elem.style['-webkit-animation-name'] = 'moveit';
@@ -78,12 +87,13 @@
       fruit.elem.addEventListener('webkitAnimationEnd', function(){
         this.style.webkitAnimationName = '';
         this.style['display'] = 'none';
-        if(fruit.hit == false) setFeedback('Missed ' + fruit.tone);
+        // if(fruit.hit == false) setFeedback('Missed ' + fruit.tone);
       }, false);
     }
 
     changeSong(0);
   });
+
 
 
   function createFruit(tone, index){
