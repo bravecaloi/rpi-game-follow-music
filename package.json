@@ -6,7 +6,7 @@
   },
   "version": "0.0.1",
   "description": "piano game",
-  "main": "app/game.html",
+  "main": "app/index.html",
   "window": {
     "toolbar": false,
     "frame": true,

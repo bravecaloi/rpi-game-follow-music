@@ -9,9 +9,6 @@
     $scope.selectedSong = {};
     ctrl.fruits = [];
 
-    // TESTING !!
-    $scope.testingNotes = ['DO','RE','MI','FA','SOL','LA','SI'];
-
     $scope.startSong = function(){
       for (var i = 0; i < ctrl.fruits.length; i++) {
         var fruit = ctrl.fruits[i];
@@ -32,7 +29,7 @@
     }
 
     var changeSong = function(position){
-      document.getElementById('fruits-container').innerHTML = '';
+      document.getElementById('song').innerHTML = '';
 
       $scope.selectedSong = SONGS[position];
 
@@ -87,7 +84,7 @@
       fruit.elem.addEventListener('webkitAnimationEnd', function(){
         this.style.webkitAnimationName = '';
         this.style['display'] = 'none';
-        // if(fruit.hit == false) setFeedback('Missed ' + fruit.tone);
+        if(fruit.hit == false) setFeedback('Missed ' + fruit.tone);
       }, false);
     }
 
@@ -97,13 +94,18 @@
 
 
   function createFruit(tone, index){
-    var elem = document.createElement('img');
+    // note pos01 apple
+    var span = document.createElement('span');
+    var p = document.createElement('p');
+    var elem = document.createElement('div');
 
-    elem.src = 'img/' + FRUITS[tone] + '.png'
+    p.innerHTML = tone;
     elem.id = 'fruit' + index;
-    elem.className = 'fruit' + (index % 2 ? '' : ' fruit-even');
+    elem.className = 'note ' + (index % 2 ? 'pos01 ' : 'pos02 ') + FRUITS[tone];
 
-    document.getElementById('fruits-container').appendChild(elem);
+    elem.appendChild(span);
+    elem.appendChild(p);
+    document.getElementById('song').appendChild(elem);
 
     return {
       'tone': tone,

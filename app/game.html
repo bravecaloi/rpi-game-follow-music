@@ -8,12 +8,11 @@
     <link rel="stylesheet" type="text/css" href="css/game.css" media="screen" />
 
     <!-- libs  -->
-    <script src="js/SongsData.js" charset="utf-8"></script>
     <script src="lib/angular.min.js" charset="utf-8"></script>
-    <!-- <script src="lib/angular-animate.min.js" charset="utf-8"></script> -->
 
     <!-- scripts  -->
-    <script src="game_server.js" charset="utf-8"></script>
+    <script src="js/SongsData.js" charset="utf-8"></script>
+    <script src="GameServer.js" charset="utf-8"></script>
     <script src="js/GameController.js" charset="utf-8"></script>
 
     <!-- start game server -->
@@ -27,15 +26,12 @@
 
   <body ng-controller="GameDisplayController as gameDisplay">
 
-    <div id="seleced_song_name">{{selectedSong.name}}</div>
-
     <div id="threashold"><div id="threasholdLine"></div></div>
     <div id="fruits-container"></div>
 
     <h1 id="feedbackText" class="text-center animated"></h1>
 
     <button class="btn btn-info" ng-click="startSong()">START SONG</button>
-
     <button ng-repeat="note in testingNotes track by $index" class="btn btn-warning" ng-click="checkPositions($index)">{{note}}</button>
 
   </body>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="GameApp" lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Juego">
+  <meta name="author" content="Animus">
+
+	<!-- Styles -->
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+
+	<!-- libs  -->
+	<script src="lib/angular.min.js" charset="utf-8"></script>
+
+	<!-- scripts  -->
+	<script src="js/SongsData.js" charset="utf-8"></script>
+	<script src="GameServer.js" charset="utf-8"></script>
+	<script src="js/GameController.js" charset="utf-8"></script>
+
+	<!-- start game server -->
+	<script type="text/javascript">
+		global.window = window;
+		global.gui = require('nw.gui');
+
+		game.startServer();
+	</script>
+
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<title>Sonidos saludables</title>
+</head>
+<body ng-controller="GameDisplayController as gameDisplay">
+	<div id="main">
+		<header class="">
+			<div class="instruments">
+				<a href="#" class="active instrument01" ng-click="startSong()">
+					<strong></strong>
+					<span class="animated wobble"></span>
+				</a>
+				<a href="#" class="instrument02">
+					<strong></strong>
+					<span class="animated wobble"></span>
+				</a>
+				<a href="#" class="instrument03">
+					<strong></strong>
+					<span class="animated wobble"></span>
+				</a>
+				<a href="#" class="instrument04">
+					<strong></strong>
+					<span class="animated wobble"></span>
+				</a>
+			</div>
+			<div class="songs">
+				<a href="#" class="song">
+					<span class="animated wobble"></span>
+					<div class="song_text">
+						<h1>{{selectedSong.name}}</h1>
+						<h2>Autor: </h2>
+					</div>
+				</a>
+			</div>
+		</header>
+
+		<div id="threashold"></div>
+		<div id="song"></div>
+
+		<footer class="animated slideInUp">
+			<div class="messaje">
+				<span id="feedbackText"><strong>Start</strong></span>
+				<div class="sub_score">
+					<!-- clases = worst, bad, normal, good, excellent-->
+					<span class="number excellent">
+						30
+					</span>
+					Puntos
+				</div>
+			</div>
+
+			<div class="score">
+				<div class="total">
+					520100
+				</div>
+				Puntos totales
+			</div>
+			<div class="logo animated pulse infinite">
+				<span></span>
+			</div>
+		</footer>
+	</div>
+
+</body>
+</html>

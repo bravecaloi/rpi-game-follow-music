@@ -34,11 +34,11 @@ var SONGS = [
 var TONES = ['DO','RE','MI','FA','SOL','LA','SI'];
 
 var FRUITS = {
-  'DO':   'fruit_apple',
-  'RE':   'fruit_banana',
-  'MI':   'fruit_cherry',
-  'FA':   'fruit_kiwi',
-  'SOL':  'fruit_lemon',
-  'LA':   'fruit_orange',
-  'SI':   'fruit_strawberry'
+  'DO':   'apple',
+  'RE':   'orange',
+  'MI':   'carrot',
+  'FA':   'pear',
+  'SOL':  'green_apple',
+  'LA':   'eggplant',
+  'SI':   'zucchini'
 };
