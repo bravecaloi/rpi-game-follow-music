@@ -48,7 +48,7 @@
      * Activated when a Fruit is correctly hit
      */
     var fruitHit = function(fruit){
-      setFeedback('Hit: ' + TONES[input] + ' -> ' + fruit.tone);
+      setFeedback('Hit ' + fruit.tone + " !");
       fruit.hit = true;
       fruit.elem.style['opacity'] = 0.5;
     }
@@ -73,7 +73,7 @@
     global.NotificationsService = {
       changeInstrument: changeInstrument
     }
-    
+
 
     /**
      * Available Methods
