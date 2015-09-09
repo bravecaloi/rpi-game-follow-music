@@ -335,10 +335,12 @@ body {
 #threashold{
   position: absolute;
   left: 50px;
-  width: 600px;
+  width: 800px;
   height: 550px;
   margin-top: 300px;
   background: url(../images/line.png) top center no-repeat;
+  background-color: yellow;
+  opacity: 0.3;
 }
 
 
