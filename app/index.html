@@ -16,13 +16,17 @@
 	<!-- libs  -->
 	<script src="lib/angular.min.js" charset="utf-8"></script>
 
-	<!-- scripts  -->
-	<script src="js/SongsData.js" charset="utf-8"></script>
-	<script src="GameServer.js" charset="utf-8"></script>
+	<!-- Frontend Game Controllers  -->
+	<script src="js/GameGlobalDefinitions.js" charset="utf-8"></script>
+	<script src="js/GameAppInitializer.js" charset="utf-8"></script>
 	<script src="js/GameController.js" charset="utf-8"></script>
+	<script src="js/FruitService.js" charset="utf-8"></script>
+	<script src="js/NotificationsService.js" charset="utf-8"></script>
 
-	<!-- start game server -->
-	<script type="text/javascript">
+
+	<!-- Node webserver -->
+	<script src="js/GameServer.js" charset="utf-8"></script>
+	<script>
 		global.window = window;
 		global.gui = require('nw.gui');
 
@@ -33,7 +37,7 @@
 
 	<title>Sonidos saludables</title>
 </head>
-<body ng-controller="GameDisplayController as gameDisplay">
+<body ng-controller="GameMechanicsController as mechanics">
 	<div id="main">
 		<header class="">
 			<div class="instruments">
@@ -58,8 +62,8 @@
 				<a href="#" class="song">
 					<span class="animated wobble"></span>
 					<div class="song_text">
-						<h1>{{selectedSong.name}}</h1>
-						<h2>Autor: </h2>
+						<h1 id="songName"></h1>
+						<h2>Author: <span id="songAuthor"></span></h2>
 					</div>
 				</a>
 			</div>

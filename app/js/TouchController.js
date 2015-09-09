@@ -1,17 +1,34 @@
-
-KEY_NOTES_PLAY      = [00, 01, 02, 03, 04, 05, 06, 07];
-KEY_AUDIO_LIBRARY   = [08, 09, 10];
-KEY_MUSIC_SELECTOR  = [11];
-
-
 exports.touched = function(req, res) {
-  var key = req.params.number;
+  var key = Number(req.params.number);
 
-  if(key < 7){
-    global.checkPositionsCtrl(key);
+  switch (key) {
 
-  }else if(key == 11){
-    console.log('scroll song');
+    //Music notes
+    case 00:
+    case 01:
+    case 02:
+    case 03:
+    case 04:
+    case 05:
+    case 06:
+      global.GameController.checkFruitsPosition(key);
+      break;
+
+    // Change instruments sounds and TODO: starts song (TBD)
+    case 07:
+    case 08:
+    case 09:
+    case 10:
+      global.GameController.startSong();
+      break;
+
+    // Scrolls the song up (loops)
+    case 11:
+      global.GameController.scrollUpSong();
+      break;
+
+    default:
+      console.log('No key definition for ' + key);
   }
 
   res.send('OK');
