@@ -19,7 +19,8 @@ exports.touched = function(req, res) {
     case 08:
     case 09:
     case 10:
-      global.GameController.startSong();
+      global.NotificationsService.changeInstrument(key);
+      // global.GameController.startSong();
       break;
 
     // Scrolls the song up (loops)

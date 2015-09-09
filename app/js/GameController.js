@@ -77,7 +77,8 @@
 
 
     // DEFAULT song selected
-    changeSong(0);
+    changeSong(DEFAULT_SONG);
+    NotificationsService.changeInstrument(DEFAULT_INSTRUMENT);
   });
 
 })();
