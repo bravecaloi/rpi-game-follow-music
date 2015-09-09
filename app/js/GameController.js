@@ -22,10 +22,19 @@
       }
     }
 
-    var startSong = function(){
+    var createAllFruits = function(){
+      ctrl.fruitsContainer.innerHTML = '';
+      ctrl.fruits = [];
+      var notes = ctrl.selectedSong.notes.split(' ');
+      for (var i = 0; i < notes.length; i++) {
+        var fruit = FruitService.createFruit(i, notes[i]);
+        ctrl.fruits.push(fruit);
+      }
+    }
+
+    var animateAllFruits = function(){
       for (var i = 0; i < ctrl.fruits.length; i++) {
         var fruit = ctrl.fruits[i];
-
         $timeout(function(mFruit) {
           return function() {
             FruitService.animateFruit(mFruit, fruitAnimationEnds);
@@ -34,21 +43,15 @@
       }
     }
 
-    var changeSong = function(position){
-      // Clear previous song
-      ctrl.fruitsContainer.innerHTML = '';
-      ctrl.fruits = [];
+    var startSong = function(){
+      createAllFruits();
+      // TODO animation for countdown to start playing
+      animateAllFruits();
+    }
 
-      // Set new selected song
+    var changeSong = function(position){
       ctrl.selectedSong = SONGS[position];
       ctrl.songName.innerHTML = ctrl.selectedSong.name;
-      var notes = ctrl.selectedSong.notes.split(' ');
-
-      // Create fruits for new selected song
-      for (var i = 0; i < notes.length; i++) {
-        var fruit = FruitService.createFruit(i, notes[i]);
-        ctrl.fruits.push(fruit);
-      }
     }
 
     var scrollUpSong = function(){
