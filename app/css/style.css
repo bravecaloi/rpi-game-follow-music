@@ -344,7 +344,7 @@ body {
 #main #song .note {
   width: 220px;
   height: 220px;
-  position: absolute;
+  /*position: absolute;*/
   /*-webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;*/
