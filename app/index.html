@@ -26,14 +26,15 @@
 	<!-- node.js webserver -->
 	<script src="js/GameServer.js" charset="utf-8"></script>
 	<script>
-		global.window = window;
-		global.gui = require('nw.gui');
+		// This enables to run it in a browser or nwjs
+		var global = global || { 'nwjs': false };
 
-		game.startServer();
+		if(global.nwjs != false){
+			global.window = window;
+			global.gui = require('nw.gui');
+			game.startServer();
+		}
 	</script>
-
-	<!-- testing on browser  -->
-	<!-- <script>global = {};</script> -->
 
 	<link rel="shortcut icon" href="favicon.ico">
 
