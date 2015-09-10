@@ -344,7 +344,7 @@ body {
 #main #song .note {
   width: 220px;
   height: 220px;
-  /*position: absolute;*/
+  position: absolute;
   /*-webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;*/
@@ -361,18 +361,22 @@ body {
   -webkit-animation-timing-function: linear;
   -webkit-animation-direction: reverse;
   -webkit-transform: translateZ(0);
-  /*-webkit-transform: translate3d(0,0,0);*/
-  /*-webkit-perspective: 1000;*/
   -webkit-backface-visibility: hidden;
+
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
+@keyframes moveit {
+  from { transform: translateX(-200px);}
+  to { transform: translateX(2000px); }
+}
 @-webkit-keyframes moveit {
-  from {
-    transform: translateX(-200px);
-  }
-  to {
-    transform: translateX(2000px);
-  }
+  from { transform: translateX(-200px);}
+  to { transform: translateX(2000px); }
 }
 
 

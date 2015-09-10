@@ -11,9 +11,14 @@
      */
     var animateFruit = function(fruit, callback){
       fruit.elem.style['-webkit-animation-name'] = 'moveit';
+      fruit.elem.style['animation-name'] = 'moveit';
       fruit.elem.style['display'] = 'block';
 
       fruit.elem.addEventListener('webkitAnimationEnd', function(){
+        callback(fruit);
+      }, false);
+
+      fruit.elem.addEventListener('animationEnd', function(){
         callback(fruit);
       }, false);
     }
