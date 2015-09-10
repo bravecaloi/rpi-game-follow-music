@@ -323,12 +323,14 @@ body {
 #main #song {
   position: absolute;
   top: 50px;
-  background-color: blue;
   margin: 340px 0 0;
   height: 802px;
-  position: relative
+  position: relative;
+
   /* TODO investigate if this GPU driven animation helps */
-  -webkit-transform: translateZ(0); 
+  -webkit-transform: translateZ(0);
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-perspective: 1000; backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
