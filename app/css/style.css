@@ -329,7 +329,7 @@ body {
 
   /* TODO investigate if this GPU driven animation helps */
   -webkit-transform: translateZ(0);
-  -webkit-transform: translate3d(0,0,0);
+  /*-webkit-transform: translate3d(0,0,0);*/
   -webkit-perspective: 1000; backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -349,10 +349,10 @@ body {
 
 @-webkit-keyframes moveit {
   from {
-    transform: translateX(-200px);
+    transform: translate3d(-200px,0,0);
   }
   to {
-    transform: translateX(2000px);
+    transform: translate3d(2000px,0,0);
   }
 }
 
