@@ -30,7 +30,7 @@
 
       p.innerHTML = tone;
       elem.id = 'fruit' + i;
-      elem.className = 'note ' + (i % 2 ? 'pos01 ' : 'pos02 ') + FRUITS[tone];
+      elem.className = 'animated-fruit note ' + (i % 2 ? 'pos01 ' : 'pos02 ') + FRUITS[tone];
 
       elem.appendChild(span);
       elem.appendChild(p);

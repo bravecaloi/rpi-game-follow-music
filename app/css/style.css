@@ -326,12 +326,6 @@ body {
   margin: 340px 0 0;
   height: 802px;
   position: relative;
-
-  /* TODO investigate if this GPU driven animation helps */
-  -webkit-transform: translateZ(0);
-  /*-webkit-transform: translate3d(0,0,0);*/
-  -webkit-perspective: 1000; backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 
@@ -347,12 +341,37 @@ body {
 }
 
 
+#main #song .note {
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  /*-webkit-box-shadow: 11px 11px 15px 0 rgba(50, 50, 50, .2);
+  -moz-box-shadow: 11px 11px 15px 0 rgba(50, 50, 50, .2);
+  box-shadow: 11px 11px 15px 0 rgba(50, 50, 50, .2);
+  z-index: 100;*/
+}
+
+.animated-fruit{
+  display: none;
+  -webkit-animation-duration: 13s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: reverse;
+  -webkit-transform: translateZ(0);
+  /*-webkit-transform: translate3d(0,0,0);*/
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+
 @-webkit-keyframes moveit {
   from {
-    transform: translate3d(-200px,0,0);
+    transform: translateX(-200px);
   }
   to {
-    transform: translate3d(2000px,0,0);
+    transform: translateX(2000px);
   }
 }
 
@@ -404,23 +423,7 @@ body {
 #main #song .zucchini span {
   background: url(../images/icon_zapa.png)
 }
-#main #song .note {
-  width: 220px;
-  height: 220px;
-  position: absolute;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 11px 11px 15px 0 rgba(50, 50, 50, .2);
-  -moz-box-shadow: 11px 11px 15px 0 rgba(50, 50, 50, .2);
-  box-shadow: 11px 11px 15px 0 rgba(50, 50, 50, .2);
-  z-index: 100;
 
-  display: none;
-  -webkit-animation-duration: 7s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-direction: reverse;
-}
 #main #song .note span {
   width: 100%;
   height: 155px;
