@@ -32,8 +32,8 @@
       elem.id = 'fruit' + i;
       elem.className = 'animated-fruit note ' + (i % 2 ? 'pos01 ' : 'pos02 ') + FRUITS[tone];
 
-      // elem.appendChild(span);
-      // elem.appendChild(p);
+      elem.appendChild(span);
+      elem.appendChild(p);
       document.getElementById('song').appendChild(elem);
 
       return {
