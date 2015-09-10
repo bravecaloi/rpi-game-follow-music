@@ -327,7 +327,8 @@ body {
   margin: 340px 0 0;
   height: 802px;
   position: relative
-  -webkit-transform: translateZ(0);
+  /* TODO investigate if this GPU driven animation helps */
+  -webkit-transform: translateZ(0); 
   -webkit-backface-visibility: hidden;
 }
 
@@ -335,7 +336,7 @@ body {
 #threashold{
   position: absolute;
   left: 50px;
-  width: 800px;
+  width: 500px;
   height: 550px;
   margin-top: 300px;
   background: url(../images/line.png) top center no-repeat;

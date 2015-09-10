@@ -8,7 +8,7 @@
 	<meta name="description" content="Juego">
   <meta name="author" content="Animus">
 
-	<!-- Styles -->
+	<!-- styles -->
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
@@ -16,14 +16,14 @@
 	<!-- libs  -->
 	<script src="lib/angular.min.js" charset="utf-8"></script>
 
-	<!-- Frontend Game Controllers  -->
+	<!-- front-end controllers  -->
 	<script src="js/GameAppInitializer.js" charset="utf-8"></script>
 	<script src="js/GameController.js" charset="utf-8"></script>
 	<script src="js/FruitService.js" charset="utf-8"></script>
 	<script src="js/NotificationsService.js" charset="utf-8"></script>
 
 
-	<!-- Node webserver -->
+	<!-- node.js webserver -->
 	<script src="js/GameServer.js" charset="utf-8"></script>
 	<script>
 		global.window = window;
@@ -31,6 +31,9 @@
 
 		game.startServer();
 	</script>
+
+	<!-- testing on browser  -->
+	<!-- <script>global = {};</script> -->
 
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -40,7 +43,7 @@
 	<div id="main">
 		<header class="">
 			<div class="instruments">
-				<a href="#" id="instrumentIcon1" class="instrument01">
+				<a href="#" id="instrumentIcon1" class="instrument01" ng-click="startSongCtrl()">
 					<strong></strong>
 					<span class="animated wobble"></span>
 				</a>
@@ -62,7 +65,7 @@
 					<span class="animated wobble"></span>
 					<div class="song_text">
 						<h1 id="songName"></h1>
-						<h2>Author: <span id="songAuthor"></span></h2>
+						<h2 id="songAuthor">Author:</h2>
 					</div>
 				</a>
 			</div>

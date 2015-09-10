@@ -49,6 +49,8 @@
       animateAllFruits();
     }
 
+    $scope.startSongCtrl = startSong;
+
     var changeSong = function(position){
       ctrl.selectedSong = SONGS[position];
       ctrl.songName.innerHTML = ctrl.selectedSong.name;
