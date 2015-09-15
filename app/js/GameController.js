@@ -30,7 +30,7 @@
 
       for (var i = 0; i < notes.length; i++) {
         delay += Number(times[i]);
-        var fruit = FruitService.createFruit( i, notes[i],  delay/2 );
+        var fruit = FruitService.createFruit( i, notes[i],  delay );
         ctrl.fruits.push(fruit);
       }
     }
