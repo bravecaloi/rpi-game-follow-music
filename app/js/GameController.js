@@ -24,8 +24,13 @@
 
     var createAllFruits = function(){
       var notes = ctrl.selectedSong.notes.split(' ');
+      var times = ctrl.selectedSong.times.split(' ');
+
+      var delay = 0;
+
       for (var i = 0; i < notes.length; i++) {
-        var fruit = FruitService.createFruit(i, notes[i]);
+        delay += Number(times[i]);
+        var fruit = FruitService.createFruit( i, notes[i],  delay/2 );
         ctrl.fruits.push(fruit);
       }
     }
@@ -37,7 +42,7 @@
           return function() {
             FruitService.animateFruit(mFruit, fruitAnimationEnds);
           };
-        }(fruit), fruit.delay * i * DELAY_UNIT_TIME);
+        }(fruit), fruit.delay * DELAY_UNIT_TIME);
       }
     }
 

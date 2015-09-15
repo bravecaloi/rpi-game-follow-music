@@ -27,7 +27,7 @@
      * Creates a new div .note and appends it
      * to the #song element
      */
-    var createFruit = function(i, tone) {
+    var createFruit = function(i, tone, time) {
       // div class="note pos01 apple"
       var span = document.createElement('span');
       var p = document.createElement('p');
@@ -45,7 +45,7 @@
         'tone': tone,
         'elem': elem,
         'hit': false,
-        'delay': 1
+        'delay': time
       }
     };
 
