@@ -70,7 +70,7 @@
      */
     var toneFailed = function(note){
       setFeedback('Failed: ' + note);
-      userPointsText.innerHTML = --userPoints;
+      // userPointsText.innerHTML = --userPoints;
     }
 
 
