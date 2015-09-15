@@ -23,8 +23,6 @@
     }
 
     var createAllFruits = function(){
-      ctrl.fruitsContainer.innerHTML = '';
-      ctrl.fruits = [];
       var notes = ctrl.selectedSong.notes.split(' ');
       for (var i = 0; i < notes.length; i++) {
         var fruit = FruitService.createFruit(i, notes[i]);
@@ -39,13 +37,15 @@
           return function() {
             FruitService.animateFruit(mFruit, fruitAnimationEnds);
           };
-        }(fruit), fruit.delay * i);
+        }(fruit), fruit.delay * i * DELAY_UNIT_TIME);
       }
     }
 
     var startSong = function(){
+      ctrl.fruitsContainer.innerHTML = '';
+      ctrl.fruits = [];
+
       createAllFruits();
-      // TODO animation for countdown to start playing
       animateAllFruits();
     }
 

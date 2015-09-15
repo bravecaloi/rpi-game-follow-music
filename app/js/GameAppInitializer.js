@@ -4,6 +4,9 @@ GAME_APP_NAME = 'GameApp';
 DEFAULT_SONG = 0;
 DEFAULT_INSTRUMENT = 07;
 
+// In milliseconds
+DELAY_UNIT_TIME = 1000;
+
 SONGS = [
   {
     'position': 0,

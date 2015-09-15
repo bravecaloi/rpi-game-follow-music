@@ -45,7 +45,7 @@
         'tone': tone,
         'elem': elem,
         'hit': false,
-        'delay': ((Math.random() * 2.8) + 0.8) * 1000
+        'delay': 1
       }
     };
 
