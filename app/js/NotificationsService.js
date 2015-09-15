@@ -91,7 +91,8 @@
       fruitHit: fruitHit,
       fruitMissed: fruitMissed,
       toneFailed: toneFailed,
-      changeInstrument: changeInstrument
+      changeInstrument: changeInstrument,
+      resetPoints: resetPoints
     };
 
   });
