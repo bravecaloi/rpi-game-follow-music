@@ -172,7 +172,9 @@ body {
   overflow: hidden;
   position: relative;
   display: block;
-  background: url(../images/bg_main.jpg) 0 0 no-repeat #e2e9a1
+  background: url(../images/bg_main.jpg) 0 0 no-repeat #e2e9a1;
+  transform: scale(0.666667, 0.6666667);
+  transform-origin: 0 0;
 }
 #main header {
   -webkit-animation-duration: .5s;
