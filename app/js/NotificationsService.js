@@ -45,6 +45,10 @@
       selectedInstrument.classList.add('wobble');
     }
 
+    var resetPoints = function(){
+      userPoints = 0;
+      userPointsText.innerHTML = userPoints;
+    }
 
     /**
      * Activated when a Fruit is correctly hit

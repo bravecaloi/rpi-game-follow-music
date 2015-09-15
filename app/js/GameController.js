@@ -49,6 +49,7 @@
     var startSong = function(){
       ctrl.fruitsContainer.innerHTML = '';
       ctrl.fruits = [];
+      NotificationsService.resetPoints();
 
       createAllFruits();
       animateAllFruits();
