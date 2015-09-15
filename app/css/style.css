@@ -355,7 +355,6 @@ body {
 }
 .animated-fruit {
   display: none;
-  -webkit-animation-duration: 10s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-direction: reverse;
   -webkit-transform: translateZ(0);
