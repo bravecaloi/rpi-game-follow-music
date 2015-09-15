@@ -5,8 +5,10 @@
 
   app.service('NotificationsService', function() {
 
-    // The feedback text is a fixed div
+    var userPoints = 0;
+
     var feedbackText = document.getElementById('feedbackText');
+    var userPointsText = document.getElementById('userPoints');
 
     // Instruments
     var keyInstrument = {
@@ -51,6 +53,7 @@
       setFeedback('Hit ' + fruit.tone + " !");
       fruit.hit = true;
       fruit.elem.style['opacity'] = 0.5;
+      userPointsText.innerHTML = ++userPoints;
     }
 
     /**
@@ -58,6 +61,7 @@
      */
     var fruitMissed = function(fruit){
       setFeedback('Missed: ' + fruit.tone);
+      userPointsText.innerHTML = --userPoints;
     }
 
 
@@ -66,6 +70,7 @@
      */
     var toneFailed = function(note){
       setFeedback('Failed: ' + note);
+      userPointsText.innerHTML = --userPoints;
     }
 
 
