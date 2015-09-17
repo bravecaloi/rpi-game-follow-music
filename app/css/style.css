@@ -413,6 +413,24 @@ body {
 #main #song .zucchini span {
   background: url(../images/icon_zapa.png)
 }
+#main #song .peach {
+  /*background-color: #f4ac2e!important*/
+}
+#main #song .peach span {
+  background: url(../images/icon_peach.png)
+}
+#main #song .lemon {
+  /*background-color: #ffcd00!important*/
+}
+#main #song .lemon span {
+  background: url(../images/icon_lemon.png)
+}
+#main #song .zapallito {
+  /*background-color: #067706!important*/
+}
+#main #song .zapallito span {
+  background: url(../images/icon_zapa2.png)
+}
 #main #song .note span {
   width: 100%;
   height: 155px;
@@ -532,4 +550,12 @@ body {
   float: left;
   font-size: 24px;
   color: #ffecd6
+}
+#splash{
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  background: url(../images/splash.jpg) 0 0 no-repeat;
+  transform: scale(0.666667, 0.6666667);
+  transform-origin: 0 0;
 }

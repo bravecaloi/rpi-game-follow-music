@@ -12,90 +12,13 @@
   <link href="css/animate.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
-
-	<!-- libs  -->
-	<script src="lib/angular.min.js" charset="utf-8"></script>
-
-	<!-- front-end controllers  -->
-	<script src="js/GameAppInitializer.js" charset="utf-8"></script>
-	<script src="js/GameController.js" charset="utf-8"></script>
-	<script src="js/FruitService.js" charset="utf-8"></script>
-	<script src="js/NotificationsService.js" charset="utf-8"></script>
-
-
-	<!-- node.js webserver -->
-	<script src="js/GameServer.js" charset="utf-8"></script>
-	<script>
-		// This enables to run it in a browser or nwjs
-		var global = global || { 'nwjs': false };
-
-		if(global.nwjs != false){
-			global.window = window;
-			global.gui = require('nw.gui');
-			game.startServer();
-		}
-	</script>
-
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<title>Sonidos saludables</title>
 </head>
-<body ng-controller="GameMechanicsController as mechanics">
-	<div id="main">
-		<header class="">
-			<div class="instruments">
-				<a href="#" id="instrumentIcon1" class="instrument01" ng-click="startSongCtrl()">
-					<strong></strong>
-					<span class="animated wobble"></span>
-				</a>
-				<a href="#" id="instrumentIcon2" class="instrument02">
-					<strong></strong>
-					<span class="animated wobble"></span>
-				</a>
-				<a href="#" id="instrumentIcon3" class="instrument03">
-					<strong></strong>
-					<span class="animated wobble"></span>
-				</a>
-				<a href="#" id="instrumentIcon4" class="instrument04">
-					<strong></strong>
-					<span class="animated wobble"></span>
-				</a>
-			</div>
-			<div class="songs">
-				<a href="#" class="song">
-					<span class="animated wobble"></span>
-					<div class="song_text">
-						<h1 id="songName"></h1>
-						<h2 id="songAuthor">Author:</h2>
-					</div>
-				</a>
-			</div>
-		</header>
+<body>
 
-		<div id="threashold"></div>
-		<div id="song"></div>
-
-		<footer class="animated slideInUp">
-			<div class="messaje">
-				<span id="feedbackText"><strong>Start</strong></span>
-				<div class="sub_score">
-					<!-- clases = worst, bad, normal, good, excellent-->
-					<span id="userPoints" class="number excellent">0</span>
-					Puntos
-				</div>
-			</div>
-
-			<div class="score">
-				<div class="total">
-					520100
-				</div>
-				Puntos totales
-			</div>
-			<div class="logo">
-				<span></span>
-			</div>
-		</footer>
-	</div>
+	<a id="splash" href="app.html"></a>
 
 </body>
 </html>

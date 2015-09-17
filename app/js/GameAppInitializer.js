@@ -46,11 +46,11 @@ TONES = ['DO','RE','MI','FA','SOL','LA','SI'];
 FRUITS = {
   'DO': 'apple',
   'RE': 'orange',
-  'MI': 'carrot',
-  'FA': 'pear',
-  'SOL': 'green_apple',
-  'LA': 'eggplant',
-  'SI': 'zucchini'
+  'MI': 'green_apple',
+  'FA': 'peach',
+  'SOL': 'pear',
+  'LA': 'lemon',
+  'SI': 'zapallito'
 };
 
 /**

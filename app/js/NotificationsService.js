@@ -8,7 +8,8 @@
     var userPoints = 0;
 
     var feedbackText = document.getElementById('feedbackText');
-    var userPointsText = document.getElementById('userPoints');
+    var pointsCounter = document.getElementById('pointsCounter');
+    var totalPoints = document.getElementById('totalPoints');
 
     // Instruments
     var keyInstrument = {
@@ -19,17 +20,19 @@
     };
     var selectedInstrument;
 
-    /**
-     * [Private]
-
-     * Sets the content of feedbackText
-     * and animates the text once
-     */
     function setFeedback(str){
-      feedbackText.classList.add('bounceIn');
       feedbackText.innerHTML = str;
+    }
+
+    var prevCounterType = 'excellent';
+    function animatePointsCounter(str, type){
+      pointsCounter.classList.remove(prevCounterType);
+      pointsCounter.classList.add('bounceIn');
+      pointsCounter.classList.add(type);
+      pointsCounter.innerHTML = str;
       setTimeout(function(){
-        feedbackText.classList.remove('bounceIn');
+        pointsCounter.classList.remove('bounceIn');
+        prevCounterType = type;
       }, 500);
     }
 
@@ -47,25 +50,26 @@
 
     var resetPoints = function(){
       userPoints = 0;
-      userPointsText.innerHTML = userPoints;
+      totalPoints.innerHTML = userPoints;
     }
 
     /**
      * Activated when a Fruit is correctly hit
      */
     var fruitHit = function(fruit){
-      setFeedback('Hit ' + fruit.tone + " !");
+      setFeedback('Muy bien!');
       fruit.hit = true;
       fruit.elem.style['opacity'] = 0.5;
-      userPointsText.innerHTML = ++userPoints;
+      animatePointsCounter('+1', 'excellent');
+      totalPoints.innerHTML = ++userPoints;
     }
 
     /**
      * Activated when a fruit was missed
      */
     var fruitMissed = function(fruit){
-      setFeedback('Missed: ' + fruit.tone);
-      userPointsText.innerHTML = --userPoints;
+      setFeedback('Se escapó ' + fruit.tone + '!');
+      animatePointsCounter('0', 'bad');
     }
 
 
@@ -73,8 +77,7 @@
      * Activated when a note is played but no fruit is hit
      */
     var toneFailed = function(note){
-      setFeedback('Failed: ' + note);
-      // userPointsText.innerHTML = --userPoints;
+      // do nothing
     }
 
 
